@@ -469,7 +469,10 @@
                             <td>
                                 <div class="action-buttons">
                                     <button class="btn-edit"><i class="fas fa-edit"></i> Edit</button>
-                                    <button class="btn-delete"><i class="fas fa-trash"></i> Hapus</button>
+                                    <form method="POST" action="/alternatif/{{ $alt->id }}/delete" onsubmit="return confirm('Yakin ingin menghapus alternatif ini?');" style="display:inline;">
+                                        @csrf
+                                        <button type="submit" class="btn-delete"><i class="fas fa-trash"></i> Hapus</button>
+                                    </form>
                                 </div>
                             </td>
                         </tr>
